@@ -30,5 +30,6 @@ public class MemberJoin {
 
 	public static void main(String[] args) throws IOException {
 		join();
+		System.out.println("종료");
 	}
 }
