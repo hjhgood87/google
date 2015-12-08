@@ -29,7 +29,7 @@ public class MemberJoin {
 
 	public static void main(String[] args) throws IOException {
 		join();
-		System.out.println("가입되었다고??????");
+		System.out.println("가입되었mmhjhhhhhh다고??????");
 		System.out.println("가입되었다고?");
 		System.out.println("testdddddd");
 	}
