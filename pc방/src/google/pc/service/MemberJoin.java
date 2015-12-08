@@ -31,6 +31,6 @@ public class MemberJoin {
 		join();
 		System.out.println("가입되었다고??????");
 		System.out.println("가입되었다고?");
-		System.out.println("test");
+		System.out.println("testdddddd");
 	}
 }
