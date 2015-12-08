@@ -1,10 +1,9 @@
 package google.pc.main;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import google.pc.dao.MemberDAO;
 import google.pc.service.MemberJoin;
 
 public class Client {
@@ -24,11 +23,12 @@ public class Client {
 			try {
 				memberJoin.join();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			break;
 		case 2:
+			MemberDAO memberDAO = new MemberDAO();
+			memberDAO.memberList();
 
 			break;
 		}
