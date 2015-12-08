@@ -27,7 +27,7 @@ public class MemberDAO {
 			preparedStatement.setInt(5, memberCommand.getPoint());
 			int count = preparedStatement.executeUpdate();
 			if (count > 0) {
-				System.out.println("회원가입이 완료되었습니다.");
+				System.out.println("회원가입이 완료되었습니다.!!!!!!!!!!!!");
 				connection.commit();
 			} else {
 				connection.rollback();
