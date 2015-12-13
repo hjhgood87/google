@@ -85,4 +85,40 @@ public class MemberDAO {
 
 		}
 	}
+
+	public void memberLogin(String id, String passwd) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		String sql = null;
+		Context context = new Context();
+
+		try {
+			connection = context.basicDataSource.getConnection();
+
+			sql = "select *";
+			sql += " from MEMBER m ";
+
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				if (id.equals(resultSet.getString("id")) && passwd.equals(resultSet.getString("passwd"))) {
+					System.out.println("로그인하셨습니다.");
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				resultSet.close();
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
 }

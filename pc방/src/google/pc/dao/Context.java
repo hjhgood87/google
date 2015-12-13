@@ -14,5 +14,8 @@ public class Context {
 		basicDataSource.setInitialSize(4);
 		basicDataSource.setMaxIdle(100);
 		basicDataSource.setMinIdle(5);
+		basicDataSource.setMaxIdle(10);
+		basicDataSource.setMaxWaitMillis(10);
+		
 	}
 }
