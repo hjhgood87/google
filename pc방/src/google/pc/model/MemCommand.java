@@ -10,6 +10,10 @@ public class MemCommand {
 	private String free_date;
 	private String pay_date;
 	private int point;
+	
+	public MemCommand() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public MemCommand(int idx, int member_level, String id, String passwd, String name, String cel, String free_date,
 			String pay_date, int point, String join_date) {
@@ -25,6 +29,15 @@ public class MemCommand {
 		this.point = point;
 		this.join_date = join_date;
 	}
+	
+
+	public MemCommand(String id, String passwd, String name) {
+		super();
+		this.id = id;
+		this.passwd = passwd;
+		this.name = name;
+	}
+
 
 	@Override
 	public String toString() {

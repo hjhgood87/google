@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.CountDownLatch;
 
 import google.pc.model.MemCommand;
 
@@ -86,25 +87,31 @@ public class MemberDAO {
 		}
 	}
 
-	public void memberLogin(String id, String passwd) {
+	public MemCommand memberLogin(String id, String passwd) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		String sql = null;
 		Context context = new Context();
+		MemCommand memCommand = null;
+		int count=0;
 
 		try {
 			connection = context.basicDataSource.getConnection();
 
 			sql = "select *";
-			sql += " from MEMBER m ";
+			sql += " from MEMBER m  where id=? and passwd= ?";
 
 			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, id);
+			preparedStatement.setString(2, passwd);
 			resultSet = preparedStatement.executeQuery();
+			count = resultSet.getRow();
 			while (resultSet.next()) {
-				if (id.equals(resultSet.getString("id")) && passwd.equals(resultSet.getString("passwd"))) {
-					System.out.println("로그인하셨습니다.");
-				}
+				String db_id = resultSet.getString("id");
+				String db_passwd = resultSet.getString("passwd");
+				String db_name = resultSet.getString("name");
+				memCommand = new MemCommand(db_id, db_passwd, db_name);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -120,5 +127,6 @@ public class MemberDAO {
 			}
 
 		}
+		return memCommand;
 	}
 }

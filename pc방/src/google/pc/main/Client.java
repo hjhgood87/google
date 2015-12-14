@@ -10,6 +10,7 @@ import google.pc.dao.MemberDAO;
 import google.pc.dao.SalesDAO;
 import google.pc.model.SalesCommand;
 import google.pc.service.MemberJoin;
+import google.pc.service.MemberLogin;
 
 public class Client {
 	public static void main(String[] args) {
@@ -20,18 +21,15 @@ public class Client {
 		int pay;
 		Scanner scanner = new Scanner(System.in);
 		MemMethod memMethod = new MemMethod();
-		String menu1[] = { "로그인, 회원가입" };
-		memMethod.memnuList(menu1);
+		String menu1[] = { "로그인", "회원가입" };
 		System.out.println("번호를 선택하세요.");
 		System.out.print("번호 입력: ");
 		inputno = scanner.nextInt();
 		while (true) {
 			switch (inputno) {
 			case 1:
-				MemberDAO memberDAO = new MemberDAO();
-				String id =scanner.nextLine();
-				String passwd = scanner.nextLine();
-				memberDAO.memberLogin(id,passwd);
+				MemberLogin memberLogin = new MemberLogin();
+				memberLogin.login();
 				start = System.currentTimeMillis();
 				break;
 			case 2:
