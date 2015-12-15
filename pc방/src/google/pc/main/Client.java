@@ -22,6 +22,7 @@ public class Client {
 		Scanner scanner = new Scanner(System.in);
 		MemMethod memMethod = new MemMethod();
 		String menu1[] = { "로그인", "회원가입" };
+		memMethod.memnuList(menu1);
 		System.out.println("번호를 선택하세요.");
 		System.out.print("번호 입력: ");
 		inputno = scanner.nextInt();
