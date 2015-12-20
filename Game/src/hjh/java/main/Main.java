@@ -12,6 +12,7 @@ import hjh.java.weapon.Weapon;
 import hjh.java.weapon.water;
 
 public class Main {
+	
 	public static void main(String[] args) {
 		Monster[] monster = { new Oak(20), new Ouger(10) };
 		Weapon[] weapons = { new Spear(10), new Stone(99), new water(15) };
@@ -19,8 +20,10 @@ public class Main {
 
 		Scanner s = new Scanner(System.in);
 
-		int mon = (int) (Math.random() * monster.length - 1) + 1;
+		int mon = (int) (Math.random() * monster.length - 2) + 1;
+		System.out.println(mon);
 		Monster ranmon = monster[mon];
+		System.out.println(ranmon.toString());
 
 		while (ranmon.getHp() >= 0) {
 			System.out.println("무기를 선택하세요");
@@ -32,6 +35,7 @@ public class Main {
 			hero.attack(ranmon);
 			ranmon.attack(hero);
 		}
+		
 
 	}
 }

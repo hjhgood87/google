@@ -5,6 +5,11 @@ import hjh.java.person.Hero;
 public abstract class Monster {
 	private int attackPower;
 
+	@Override
+	public String toString() {
+		return "Monster [attackPower=" + attackPower + ", hp=" + hp + "]";
+	}
+
 	public int getHp() {
 		return hp;
 	}

@@ -7,7 +7,8 @@ public class Oak extends Monster {
 	private Hero hero;
 
 	public Oak(int i) {
-		hp = i;
+		super();
+		this.hp = i;
 	}
 
 	public int getHp() {
