@@ -1,14 +1,7 @@
 package hjh.java.service;
 
-public class Weapon {
-	protected int attackPower;
-	
+public interface Weapon {
+	int STONE_ATTACK_POWER = 99;
+	String STONE_NAME = "짱돌";
 
-	public int getAttackPower() {
-		return attackPower;
-	}
-
-	public void setAttackPower(int attackPower) {
-		this.attackPower = attackPower;
-	}
 }

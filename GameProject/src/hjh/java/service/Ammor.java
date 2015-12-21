@@ -1,5 +1,7 @@
 package hjh.java.service;
 
-public class Ammor {
+public interface Ammor {
+	int SHOES_AMOR = 20;
+	String SHOES_NAME = "신발";
 
 }

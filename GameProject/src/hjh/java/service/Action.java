@@ -1,9 +1,8 @@
 package hjh.java.service;
 
-import hjh.java.job.Job;
+public abstract interface Action {
+	public void personAttack(Monster monsterInter);
 
-public interface Action {
-	public void attack(Monster monsterInter);
 	public void monsterAttack(Job job);
-	
+
 }
