@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#test").val("입력하라고!");
+		$("#submit_btn").click(function() {
+			$("#form1").submit();
+		});
+		$("#test").focus(function(){
+			$("#test").val("");
+		});
+		
+		//$("#test").blur(function(){
+		//	$("#test").val("입력하라고!").css("color","red");
+		//});
+		
+	});
+</script>
+</head>
+<body>
+	<form action="test8" method="post" id="form1">
+
+		<textarea rows="10" id="test" name="area" cols="20">
+		
+	
+		</textarea>
+			
+	</form>
+
+	<input type="button" id="submit_btn" value="전송하라고!">
+	<input type="reset">
+</body>
+</html>

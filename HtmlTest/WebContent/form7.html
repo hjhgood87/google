@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>폼태그</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#submitbtn").click(function () {
+		//alert("DDD");
+		$("#form1").submit();
+	
+		$("input:checkbox[name='food[]']:checked").each(function(){ 
+			alert($(this).val()); 
+		});
+		
+	});
+});
+
+
+
+</script>
+</head>
+<body>
+	<form action="test7" method="post" id="form1">
+		<input type="checkbox" name="food[]" value="닭발"> 닭발
+		<input type="checkbox" name="food[]" value="갈비"> 갈비
+		<input type="checkbox" name="food[]" value="짜장면"> 짜장면<br>
+		<input type="checkbox" name="food[]" value="닭도리탕"> 닭도리탕
+		<input type="checkbox" name="food[]" value="참이슬"> 참이슬
+		<input type="checkbox" name="food[]" value="처음처럼"> 처음처럼
+		<br>
+		<input type="button" style="padding: 20px;font-size:20px" id="submitbtn" value="전송버튼">
+	</form>
+</body>
+</html>

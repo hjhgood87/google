@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Show</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/Member</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <servlet>
+    <servlet-name>my1</servlet-name>
+    <servlet-class>com.naver.Test2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my1</servlet-name>
+    <url-pattern>/test2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>my2</servlet-name>
+    <servlet-class>com.naver.Test3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my2</servlet-name>
+    <url-pattern>/test3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>my3</servlet-name>
+    <servlet-class>com.naver.Test4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my3</servlet-name>
+    <url-pattern>/go</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>my4</servlet-name>
+    <servlet-class>com.naver.Test5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my4</servlet-name>
+    <url-pattern>/test5</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>my7</servlet-name>
+    <servlet-class>com.naver.Test7</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my7</servlet-name>
+    <url-pattern>/test7</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>my9</servlet-name>
+    <servlet-class>com.naver.Test9</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>my9</servlet-name>
+    <url-pattern>/test9</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
